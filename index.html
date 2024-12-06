@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            background: url('file:///C:/Users/Rajamahendra/Downloads/beautiful-singer-4096x4096-14267.jpg') no-repeat center center/cover;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .balloon-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .balloon {
+            width: 70px;
+            height: 90px;
+            background-color: #d4af37; /* Gold */
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: float 4s ease-in-out infinite;
+        }
+        .balloon:hover {
+            transform: scale(1.1);
+        }
+        .balloon::after {
+            content: '';
+            position: absolute;
+            top: 90px;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background: #fff;
+            transform: translateX(-50%);
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        .note {
+            display: none;
+            font-size: 1.4rem;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday, [Friend's Name]!</h1>
+    <h2>Here’s to 20 unforgettable memories, just for you!</h2>
+    <div class="balloon-container">
+        <!-- 20 Balloons -->
+        <div class="balloon" onclick="revealNote(1)"></div>
+        <div class="balloon" onclick="revealNote(2)"></div>
+        <div class="balloon" onclick="revealNote(3)"></div>
+        <div class="balloon" onclick="revealNote(4)"></div>
+        <div class="balloon" onclick="revealNote(5)"></div>
+        <div class="balloon" onclick="revealNote(6)"></div>
+        <div class="balloon" onclick="revealNote(7)"></div>
+        <div class="balloon" onclick="revealNote(8)"></div>
+        <div class="balloon" onclick="revealNote(9)"></div>
+        <div class="balloon" onclick="revealNote(10)"></div>
+        <div class="balloon" onclick="revealNote(11)"></div>
+        <div class="balloon" onclick="revealNote(12)"></div>
+        <div class="balloon" onclick="revealNote(13)"></div>
+        <div class="balloon" onclick="revealNote(14)"></div>
+        <div class="balloon" onclick="revealNote(15)"></div>
+        <div class="balloon" onclick="revealNote(16)"></div>
+        <div class="balloon" onclick="revealNote(17)"></div>
+        <div class="balloon" onclick="revealNote(18)"></div>
+        <div class="balloon" onclick="revealNote(19)"></div>
+        <div class="balloon" onclick="revealNote(20)"></div>
+    </div>
+    <!-- Notes -->
+    <div id="note1" class="note">"Remember our amazing beach day? It was unforgettable!"</div>
+    <div id="note2" class="note">"Our late-night study sessions always made me laugh!"</div>
+    <div id="note3" class="note">"The road trip we took was one of the best adventures!"</div>
+    <div id="note4" class="note">"Your hilarious dance moves at the party were legendary!"</div>
+    <div id="note5" class="note">"Our karaoke session was so much fun. You nailed it!"</div>
+    <div id="note6" class="note">"That surprise movie night was absolutely perfect."</div>
+    <div id="note7" class="note">"You taught me so much during our group project!"</div>
+    <div id="note8" class="note">"I’ll never forget our intense gaming marathon!"</div>
+    <div id="note9" class="note">"The prank we pulled together was epic!"</div>
+    <div id="note10" class="note">"Our endless talks under the stars were magical."</div>
+    <div id="note11" class="note">"Your support during my tough times means the world."</div>
+    <div id="note12" class="note">"The time we got lost but laughed through it was the best."</div>
+    <div id="note13" class="note">"Cooking together was messy but so fun!"</div>
+    <div id="note14" class="note">"Our photo shoot day still makes me smile."</div>
+    <div id="note15" class="note">"The birthday surprise you planned was unforgettable."</div>
+    <div id="note16" class="note">"The music jam sessions we had were fantastic."</div>
+    <div id="note17" class="note">"I loved shopping with you. You have the best style!"</div>
+    <div id="note18" class="note">"Our midnight food hunt was the most delicious memory."</div>
+    <div id="note19" class="note">"Volunteering together made my heart so full."</div>
+    <div id="note20" class="note">"You’ve always been my partner-in-crime and my favorite person!"</div>
+    <script>
+        function revealNote(number) {
+            const note = document.getElementById(`note${number}`);
+            note.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Game</title>
+    <style>
+        /* Styling for the game container */
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .card {
+            width: 100px;
+            height: 100px;
+            background-color: #d4af37;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        .card.flipped {
+            background-color: #ffffff;
+            color: #000;
+            pointer-events: none;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Here's a fun game for you! Match the cards to reveal some Taylor Swift-inspired moments!</p>
+    <div class="game-container" id="gameContainer"></div>
+    <p id="message"></p>
+    <script>
+        const memoryCards = [
+            "🎸", "🎤", "💃", "🎹",
+            "🎸", "🎤", "💃", "🎹",
+            "🌟", "❤️", "✨", "🎶",
+            "🌟", "❤️", "✨", "🎶"
+        ];
+
+        let shuffledCards = memoryCards.sort(() => 0.5 - Math.random());
+        const gameContainer = document.getElementById("gameContainer");
+        let firstCard = null;
+        let secondCard = null;
+        let matchedPairs = 0;
+
+        function createCard(content) {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.textContent = content;
+            card.dataset.value = content;
+
+            card.addEventListener("click", () => {
+                card.classList.add("flipped");
+                if (!firstCard) {
+                    firstCard = card;
+                } else {
+                    secondCard = card;
+                    checkMatch();
+                }
+            });
+
+            return card;
+        }
+
+        function checkMatch() {
+            if (firstCard.dataset.value === secondCard.dataset.value) {
+                firstCard.classList.add("hidden");
+                secondCard.classList.add("hidden");
+                matchedPairs++;
+                resetCards();
+                if (matchedPairs === memoryCards.length / 2) {
+                    document.getElementById("message").textContent = "Congratulations! You've matched all the cards!";
+                }
+            } else {
+                setTimeout(() => {
+                    firstCard.classList.remove("flipped");
+                    secondCard.classList.remove("flipped");
+                    resetCards();
+                }, 1000);
+            }
+        }
+
+        function resetCards() {
+            firstCard = null;
+            secondCard = null;
+        }
+
+        function initGame() {
+            shuffledCards.forEach((symbol) => {
+                const card = createCard(symbol);
+                gameContainer.appendChild(card);
+            });
+        }
+
+        initGame();
+    </script>
+</body>
+</html>
